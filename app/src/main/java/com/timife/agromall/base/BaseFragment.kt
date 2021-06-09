@@ -18,24 +18,20 @@ abstract class BaseFragment<VM : BaseViewModel, B : ViewBinding, Repo : BaseRepo
     protected lateinit var viewModel: VM
     protected lateinit var binding: B
     protected val retrofitClient = RetrofitClient()
-//    protected lateinit var userPreferences: UserPreferences
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         try {
-//            userPreferences = UserPreferences(requireContext())
             binding = getFragmentBinding(inflater, container)
             val factory = ViewModelFactory(getRepository())
             viewModel = ViewModelProvider(requireActivity(), factory).get(getViewModel())
-//            lifecycleScope.launch { userPreferences.authEmail.first() }
             setHasOptionsMenu(true)
         } catch (e: Exception) {
             Log.d("TAG", "onCreateView", e)
         }
         return binding.root
-
     }
 
     abstract fun getViewModel(): Class<VM>
