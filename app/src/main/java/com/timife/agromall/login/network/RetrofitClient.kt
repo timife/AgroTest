@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitClient {
     companion object {
-        private const val BASE_URL = "https://nursery-backend-api.herokuapp.com/"
+        private const val BASE_URL = "https://staging-api.tellerium.io/api/v1/"
     }
 
     fun <Api> buildApi(
