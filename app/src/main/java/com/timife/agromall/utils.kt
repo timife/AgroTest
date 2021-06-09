@@ -5,7 +5,6 @@ import android.content.Intent
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
-import com.timife.agromall.base.BaseFragment
 import com.timife.agromall.login.ui.LoginFragment
 
 
@@ -18,7 +17,7 @@ fun <A : Activity> Activity.startNewActivity(activity: Class<A>) {
 
 class Constants {
     companion object {
-        const val QUERY_PAGE_SIZE = 15
+        const val QUERY_PAGE_SIZE = 30
     }
 }
 
@@ -31,18 +30,6 @@ fun View.enable(enabled: Boolean) {
     alpha = if (enabled) 1f else 0.5f
 }
 
-//fun specs(barChart: BarChart) {
-//    barChart.description.isEnabled = false
-//    barChart.axisLeft.setDrawGridLines(true)
-//    barChart.axisLeft.setDrawLabels(true)
-//    barChart.xAxis.setDrawGridLines(true)
-//    barChart.xAxis.setDrawLabels(false)
-//    barChart.setDrawGridBackground(false)
-//    barChart.axisRight.setDrawGridLines(false)
-//    barChart.axisRight.setDrawLabels(false)
-//    barChart.setDrawBorders(false)
-//
-//}
 
 fun View.snackbar(message: String, action: (() -> Unit)? = null) {
     val snackbar = Snackbar.make(this, message, Snackbar.LENGTH_LONG)
@@ -69,7 +56,7 @@ fun Fragment.handleApiError(
                 requireView().snackbar("You've entered incorrect email or password")
             } else {
                 //@todo perform logout operation
-                (this as BaseFragment<*, *, *>).logout()
+//                (this as BaseFragment<*, *, *>).logout()
 
             }
         }

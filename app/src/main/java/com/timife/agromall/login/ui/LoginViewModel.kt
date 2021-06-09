@@ -2,8 +2,10 @@ package com.timife.agromall.login.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.timife.agromall.Resource
+import com.timife.agromall.UserPreferences
 import com.timife.agromall.base.BaseViewModel
 import kotlinx.coroutines.launch
 
@@ -26,3 +28,11 @@ import kotlinx.coroutines.launch
 //        repository.saveAuthToken(token)
 //    }
 //}
+
+class LoginViewModel(
+        private val preferences: UserPreferences
+) : ViewModel(){
+    suspend fun saveEmail (email: String){
+        preferences.saveAuthEmail(email)
+    }
+}

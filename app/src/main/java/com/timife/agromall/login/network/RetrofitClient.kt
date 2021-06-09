@@ -12,19 +12,12 @@ class RetrofitClient {
     }
 
     fun <Api> buildApi(
-        api: Class<Api>,
-        authToken: String? = null
+        api: Class<Api>
     ): Api {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(
                 OkHttpClient.Builder()
-                    //interceptor for auth needed endpoints
-                    .addInterceptor { chain ->
-                        chain.proceed(chain.request().newBuilder().also {
-                            it.addHeader("Authorization", "Bearer $authToken")
-                        }.build())
-                    }
                     .also { client ->
                         if (BuildConfig.DEBUG) {
                             val logging = HttpLoggingInterceptor()

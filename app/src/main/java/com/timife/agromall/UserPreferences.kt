@@ -20,14 +20,14 @@ class UserPreferences(context: Context) {
         )
     }
 
-    val authToken: kotlinx.coroutines.flow.Flow<String?>
+    val authEmail: kotlinx.coroutines.flow.Flow<String?>
         get() = dataStore.data.map { preferences ->
             preferences[KEY_AUTH]
         }
 
-    suspend fun saveAuthToken(authToken: String) {
+    suspend fun saveAuthEmail(email: String) {
         dataStore.edit { preferences ->
-            preferences[KEY_AUTH] = authToken
+            preferences[KEY_AUTH] = email
         }
     }
 

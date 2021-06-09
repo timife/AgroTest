@@ -10,5 +10,4 @@ abstract class BaseViewModel(
     init{
         Log.d("VIEW_MODEL_TEST","View-model Created")
     }
-//    suspend fun logout(api: UserApi) = baseRepository.logout(api)
 }

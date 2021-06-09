@@ -6,30 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:id="@+id/agro"
-        android:fontFamily="cursive"
-        android:text="AGRO"
-        android:textColor="@color/primary_color"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="....agromall"
-        android:textColor="@color/primary_color"
-        android:textSize="14sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="@+id/agro"
-        app:layout_constraintTop_toBottomOf="@id/agro" />
-
+    <fragment
+        android:id="@+id/fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/onboarding_navigation"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="274dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
