@@ -1,4 +1,4 @@
-package com.timife.agromall.login.network
+package com.timife.agromall.network
 
 import androidx.databinding.library.BuildConfig
 import okhttp3.OkHttpClient
