@@ -9,7 +9,11 @@
         android:id="@+id/dashboardFragment"
         android:name="com.timife.agromall.dashboard.DashboardFragment"
         android:label="Dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_farmersFragment"
+            app:destination="@id/farmersFragment" />
+    </fragment>
     <fragment
         android:id="@+id/farmersFragment"
         android:name="com.timife.agromall.farmers.FarmersFragment"
