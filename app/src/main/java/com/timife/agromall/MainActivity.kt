@@ -4,16 +4,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import com.timife.agromall.databinding.ActivityMainBinding
 import com.timife.agromall.network.RetrofitClient
 
 
 class MainActivity : AppCompatActivity() {
-    protected val retrofitClient = RetrofitClient()
-    protected lateinit var userPreferences: UserPreferences
+    private val retrofitClient = RetrofitClient()
+    private lateinit var userPreferences: UserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -33,5 +35,12 @@ class MainActivity : AppCompatActivity() {
 //        CoroutineScope(Dispatchers.IO).launch {
 //            instantiateViewModels()
 //        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        val appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation.xml"
-    app:startDestination="@id/dashboardFragment2">
+    app:startDestination="@id/dashboardFragment">
 
     <fragment
-        android:id="@+id/dashboardFragment2"
+        android:id="@+id/dashboardFragment"
         android:name="com.timife.agromall.dashboard.DashboardFragment"
         android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
-        android:id="@+id/farmersFragment2"
+        android:id="@+id/farmersFragment"
         android:name="com.timife.agromall.farmers.FarmersFragment"
         android:label="Farmers"
         tools:layout="@layout/fragment_farmers" />
     <fragment
-        android:id="@+id/farmsFragment2"
+        android:id="@+id/farmsFragment"
         android:name="com.timife.agromall.farms.FarmsFragment"
         android:label="Farms"
         tools:layout="@layout/fragment_farms" />

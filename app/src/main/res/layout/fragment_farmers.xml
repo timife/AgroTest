@@ -7,10 +7,9 @@
     tools:context=".farmers.FarmersFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh_inventory"
+        android:id="@+id/swipe_refresh_farmers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:foregroundGravity="center"
-            android:layout_marginTop="40dp"
             android:paddingBottom="10dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintHorizontal_bias="0.0"
@@ -39,6 +37,7 @@
         android:layout_margin="17dp"
         android:backgroundTint="@color/primary_color"
         app:fabCustomSize="50dp"
+        android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:maxImageSize="45dp" />

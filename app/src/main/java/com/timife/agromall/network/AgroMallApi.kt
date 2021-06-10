@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface AgroMallApi {
-    @GET("/farmer/sample")
+    @GET("farmer/sample/")
     suspend fun getFarmers(
         @Query("limit")
         limit: String? = "n",

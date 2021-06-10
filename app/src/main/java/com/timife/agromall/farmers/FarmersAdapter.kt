@@ -11,8 +11,8 @@ import com.timife.agromall.databinding.FarmerCardItemBinding
 import com.timife.agromall.response.Farmer
 
 class FarmersAdapter(
-    private val context: Context,
-    private val onClickListener: OnClickListener
+    private val context: Context
+//    private val onClickListener: OnClickListener
 ) : PagingDataAdapter<Farmer, FarmersAdapter.FarmerViewHolder>(FARMER_COMPARATOR) {
     inner class FarmerViewHolder(private var binding: FarmerCardItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -49,11 +49,11 @@ class FarmersAdapter(
         if (farmerItem != null) {
             holder.bind(farmerItem)
         }
-        holder.itemView.setOnClickListener {
-            if (farmerItem != null) {
-                onClickListener.onClick(farmerItem)
-            }
-        }
+//        holder.itemView.setOnClickListener {
+//            if (farmerItem != null) {
+//                onClickListener.onClick(farmerItem)
+//            }
+//        }
 //        holder.itemView.dropdown.setOnClickListener {
 //            val inventoryItemOptions = arrayOf("Delete")
 //            MaterialAlertDialogBuilder(context).setTitle("")
