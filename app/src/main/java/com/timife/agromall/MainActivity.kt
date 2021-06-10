@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
+import com.ravikoradiya.library.CenterTitle
 import com.timife.agromall.databinding.ActivityMainBinding
 import com.timife.agromall.network.RetrofitClient
 
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
         binding.bottomNavView.setupWithNavController(navController)
-//        CenterTitle.centerTitle(binding.toolbar, true)
+        CenterTitle.centerTitle(binding.toolbar, true)
 //        CoroutineScope(Dispatchers.IO).launch {
 //            instantiateViewModels()
 //        }
